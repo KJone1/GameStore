@@ -8,13 +8,11 @@ export default function Grid(props: any) {
     pathname: `${props.match.url.slice(0, -2)}/${
       Number(props.match.params.id) + 1
     }`,
-    // we could use Math.random, but that's not guaranteed unique.
   };
   const bigTarget = {
     pathname: `${props.match.url.slice(0, -3)}/${
       Number(props.match.params.id) + 1
     }`,
-    // we could use Math.random, but that's not guaranteed unique.
   };
   return (
     <SimpleGrid columns={5} spacingX={"2vw"} spacingY={"3vh"} mt="18vh">
