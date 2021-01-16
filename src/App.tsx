@@ -1,12 +1,19 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import PageLayout from "./pages/StoreLayout";
-
+import NavSidebar from "./components/NavSidebar";
+import MainPage from "./pages/Main";
+import InfoPage from "./pages/info";
+import GameLayout from "./pages/GameLayout";
 function App() {
   return (
     <Router>
+      <NavSidebar />
       <Switch>
+        <Route exact path={`/`} component={MainPage} />
         <Route path={`/page/:id`} component={PageLayout} />
+        <Route path={`/game/:slug`} component={GameLayout} />
+        <Route exact path="/info" component={InfoPage} />
       </Switch>
     </Router>
   );
