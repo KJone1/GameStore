@@ -12,7 +12,7 @@ export default function TopGame(props: any) {
       bg="#ffff"
       my="0px"
       _hover={{
-        transform: "scale(1.05)",
+        transform: "scale(1.1)",
         borderWidth: "4px",
         borderColor: `${colors.pink}`,
         borderRadius: "4px",
