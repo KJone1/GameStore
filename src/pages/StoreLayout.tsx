@@ -1,10 +1,12 @@
 import React from "react";
-import "./App.css";
+
 import http from "../axios";
 import Grid from "../components/simpleGrid";
 import TopGame from "../components/topGame";
-import Spinner from "../components/spinner";
-import { Heading } from "@chakra-ui/react";
+// import Spinner from "../components/spinner";
+import { Flex, Heading } from "@chakra-ui/react";
+import colors from "../styles/colors";
+import LoadingScreen from "../components/loadingScreen";
 
 function PageLayout({ match }: any) {
   const httpCall = http(match.params.id);
@@ -14,21 +16,25 @@ function PageLayout({ match }: any) {
       <>
         {match.isExact && (
           <>
-            <div className="App">
-              <header className="App-header">
-                <Heading size="2xl" color="#ff165d" pt={4}>
-                  Shop
-                </Heading>
-                <TopGame src={httpCall} match={match} />
-                <Grid src={httpCall} match={match} />
-              </header>
-            </div>
+            <Flex
+              textAlign="center"
+              h="200vh"
+              bgColor={colors.grey}
+              flexDirection="column"
+              alignItems="center"
+            >
+              <Heading size="2xl" color={colors.pink} pt={4}>
+                Shop
+              </Heading>
+              <TopGame src={httpCall} match={match} />
+              <Grid src={httpCall} match={match} />
+            </Flex>
           </>
         )}
       </>
     );
   } else {
-    return <Spinner />;
+    return <LoadingScreen />;
   }
 }
 
