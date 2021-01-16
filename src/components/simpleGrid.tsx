@@ -31,14 +31,26 @@ export default function Grid(props: any) {
             borderRadius: "4px",
           }}
         >
-          <AspectRatio maxW="100%" minW="80%" h="100%" ratio={4 / 3}>
-            <Image
-              borderRadius="2px"
-              src={array.background_image}
-              alt=""
-              objectFit="cover"
-            />
-          </AspectRatio>
+          <NavLink
+            to={{
+              pathname: `/game/${array.slug}`,
+              state: {
+                title: `${array.name}`,
+                released: `${array.released}`,
+
+                metacritic: `${array.metacritic}`,
+              },
+            }}
+          >
+            <AspectRatio maxW="100%" minW="80%" h="100%" ratio={4 / 3}>
+              <Image
+                borderRadius="2px"
+                src={array.background_image}
+                alt=""
+                objectFit="cover"
+              />
+            </AspectRatio>
+          </NavLink>
         </Box>
       ))}
       <Center>
