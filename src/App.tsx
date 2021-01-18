@@ -1,10 +1,16 @@
 import React from "react";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Redirect,
+} from "react-router-dom";
 import PageLayout from "./pages/StoreLayout";
 import NavSidebar from "./components/NavSidebar";
 import MainPage from "./pages/Main";
 import InfoPage from "./pages/info";
 import GameLayout from "./pages/GameLayout";
+import E404 from "./pages/ErrorPage";
 function App() {
   return (
     <Router>
@@ -14,6 +20,10 @@ function App() {
         <Route path={`/page/:id`} component={PageLayout} />
         <Route path={`/game/:slug`} component={GameLayout} />
         <Route exact path="/info" component={InfoPage} />
+        <Route exact path="/error" component={E404} />
+        <Route>
+          <Redirect to="/error" />
+        </Route>
       </Switch>
     </Router>
   );
