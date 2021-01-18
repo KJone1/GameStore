@@ -1,4 +1,5 @@
 import { Box, Image } from "@chakra-ui/react";
+import { NavLink } from "react-router-dom";
 import colors from "../styles/colors";
 
 export default function TopGame(props: any) {
@@ -18,14 +19,27 @@ export default function TopGame(props: any) {
         borderRadius: "4px",
       }}
     >
-      <Image
-        borderRadius="2px"
-        w="100%"
-        h="100%"
-        src={props.src.results[0].background_image}
-        alt="top game"
-        objectFit="cover"
-      />
+      <NavLink
+        to={{
+          pathname: `/game/${props.src.results[0].id}`,
+          state: {
+            title: `${props.src.results[0].name}`,
+            released: `${props.src.results[0].released}`,
+            genres: props.src.results[0].genres,
+            metacritic: `${props.src.results[0].metacritic}`,
+            screenshots: props.src.results[0].short_screenshots,
+          },
+        }}
+      >
+        <Image
+          borderRadius="2px"
+          w="100%"
+          h="100%"
+          src={props.src.results[0].background_image}
+          alt=""
+          objectFit="cover"
+        />
+      </NavLink>
     </Box>
   );
 }
