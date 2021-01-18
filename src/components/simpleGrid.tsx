@@ -33,12 +33,13 @@ export default function Grid(props: any) {
         >
           <NavLink
             to={{
-              pathname: `/game/${array.slug}`,
+              pathname: `/game/${array.id}`,
               state: {
                 title: `${array.name}`,
                 released: `${array.released}`,
-
+                genres: array.genres,
                 metacritic: `${array.metacritic}`,
+                screenshots: array.short_screenshots,
               },
             }}
           >
