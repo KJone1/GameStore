@@ -89,7 +89,7 @@ export default function InfoPage(props: any) {
               </Stack>
               <Stack direction="row" spacing={6} ml={"10%"} mt={12}>
                 {locations.state.screenshots.slice(1, 5).map((array: any) => (
-                  <AspectRatio w="16vw" h="8vw" ratio={16 / 9}>
+                  <AspectRatio w="17vw" h="9vw" ratio={16 / 9}>
                     <Image
                       borderRadius="3px"
                       src={array.image}
