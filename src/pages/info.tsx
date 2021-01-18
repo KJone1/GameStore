@@ -4,7 +4,7 @@ export default function InfoPage() {
   return (
     <Flex
       textAlign="center"
-      h="200vh"
+      h="100vh"
       bgColor={colors.grey}
       flexDirection="column"
       alignItems="center"

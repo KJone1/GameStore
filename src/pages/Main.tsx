@@ -5,7 +5,7 @@ export default function MainPage() {
   return (
     <Flex
       textAlign="center"
-      h="200vh"
+      h="100vh"
       bgColor={colors.grey}
       flexDirection="column"
       alignItems="center"
